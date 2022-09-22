@@ -20,3 +20,12 @@ def login(authenticator, password):
     except User.DoesNotExist:
         pass
     return None
+
+
+def login_by_id(user_id):
+    try:
+        user = get_user(id=user_id)
+        return login_function(user)
+    except User.DoesNotExist:
+        pass
+    return None

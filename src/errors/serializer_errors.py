@@ -1,0 +1,2 @@
+class SerializerErrors:
+    pass

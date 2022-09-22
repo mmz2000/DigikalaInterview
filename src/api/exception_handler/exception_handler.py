@@ -20,7 +20,6 @@ def api_exception_handler(exc, context):
             data={
                 "ok": False,
                 "data": exc.message,
-                "status": status.HTTP_400_BAD_REQUEST,
                 "error_type": exc.error_type,
             },
             status=status.HTTP_400_BAD_REQUEST,
@@ -30,7 +29,6 @@ def api_exception_handler(exc, context):
             data={
                 "ok": False,
                 "data": {"message": str(exc)},
-                "status": status.HTTP_405_METHOD_NOT_ALLOWED,
                 "error_type": [ErrorEnum.HTTP.METHOD_NOT_ALLOWED],
             },
             status=status.HTTP_405_METHOD_NOT_ALLOWED,
@@ -40,7 +38,6 @@ def api_exception_handler(exc, context):
             data={
                 "ok": False,
                 "data": {"message": str(exc)},
-                "status": status.HTTP_401_UNAUTHORIZED,
                 "error_type": [ErrorEnum.HTTP.UNAUTHORIZED],
             },
             status=status.HTTP_401_UNAUTHORIZED,
@@ -50,7 +47,6 @@ def api_exception_handler(exc, context):
             data={
                 "ok": False,
                 "data": {"message": _("user does not have permission.")},
-                "status": status.HTTP_403_FORBIDDEN,
                 "error_type": [ErrorEnum.HTTP.FORBIDDEN],
             },
             status=status.HTTP_403_FORBIDDEN,
@@ -60,7 +56,6 @@ def api_exception_handler(exc, context):
             data={
                 "ok": False,
                 "data": {"message": str(exc)},
-                "status": status.HTTP_429_TOO_MANY_REQUESTS,
                 "error_type": [ErrorEnum.HTTP.THROTTLED],
             },
             status=status.HTTP_429_TOO_MANY_REQUESTS,
@@ -70,7 +65,6 @@ def api_exception_handler(exc, context):
             data={
                 "ok": False,
                 "data": exc.message,
-                "status": status.HTTP_404_NOT_FOUND,
                 "error_type": exc.error_type,
             },
             status=status.HTTP_404_NOT_FOUND,
@@ -81,7 +75,6 @@ def api_exception_handler(exc, context):
         data={
             "ok": False,
             "data": {"message": str(exc)},
-            "status": status.HTTP_500_INTERNAL_SERVER_ERROR,
         },
         status=status.HTTP_500_INTERNAL_SERVER_ERROR,
     )

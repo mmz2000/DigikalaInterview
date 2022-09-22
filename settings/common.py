@@ -213,6 +213,9 @@ CACHES = {
 # RESTFARMEWORK CONFIGURATION
 REST_FRAMEWORK = {
     "EXCEPTION_HANDLER": "src.api.exception_handler.api_exception_handler",
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "src.apps.accounts.backends.JWTAuthentication",
+    ),
 }
 # END RESTFARMEWORK CONFIGURATION
 

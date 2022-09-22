@@ -30,10 +30,6 @@ PACKAGE_ROOT = dirname(PROJECT_ROOT)
 path.append(PACKAGE_ROOT)
 # END PATH CONFIGURATION
 
-# SITE CONFIGURATION
-SITE_NAME = get_env("SITE_NAME", default="example.com")
-SITE_ID = int(get_env("SITE_ID", default=1))
-# SITE CONFIGURATION
 
 # DEBUG CONFIGURATION
 DEBUG = get_env("DEBUG", default="False") == "True"
@@ -163,7 +159,7 @@ MEDIA_URL = get_env("MEDIA_URL", default="media/")
 # STATIC FILE CONFIGURATION
 STATIC_ROOT = get_env("STATIC_ROOT", default="static/")
 STATIC_URL = get_env("STATIC_URL", default="static/")
-static_file_env = get_env("STATICFILES_DIRS", default="assets,docs/openapi")
+static_file_env = get_env("STATICFILES_DIRS", default="")
 STATICFILES_DIRS = static_file_env.split(",")
 # END STATIC FILE CONFIGURATION
 
@@ -175,9 +171,6 @@ SECRET_KEY = get_env("SECRET_KEY")
 ALLOWED_HOSTS = get_env("ALLOWED_HOSTS", default="*").split(",")
 # END SITE CONFIGURATION
 
-# FIXTURE CONFIGURATION
-FIXTURE_DIRS = (Path(join(PROJECT_ROOT, "fixtures")),)
-# END FIXTURE CONFIGURATION
 
 # LOGGING CONFIGURATION
 LOGGING = {

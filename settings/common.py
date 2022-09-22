@@ -25,6 +25,7 @@ def get_env(key, default=None, optinal=False):
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_ROOT = dirname(dirname(abspath(__file__)))
 PACKAGE_ROOT = dirname(PROJECT_ROOT)
+ASSETS_DIR = BASE_DIR / "assets"
 # Add our project to our pythonpath, this way we don't need to type our project
 # name in our dotted import paths:
 path.append(PACKAGE_ROOT)

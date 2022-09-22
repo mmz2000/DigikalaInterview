@@ -159,8 +159,10 @@ MEDIA_URL = get_env("MEDIA_URL", default="media/")
 # STATIC FILE CONFIGURATION
 STATIC_ROOT = get_env("STATIC_ROOT", default="static/")
 STATIC_URL = get_env("STATIC_URL", default="static/")
-static_file_env = get_env("STATICFILES_DIRS", default="")
-STATICFILES_DIRS = static_file_env.split(",")
+static_file_env = get_env("STATICFILES_DIRS", optinal=True)
+STATICFILES_DIRS = (
+    static_file_env.split(",") if static_file_env is not None else []
+)
 # END STATIC FILE CONFIGURATION
 
 # SECRET CONFIGURATION
@@ -215,8 +217,8 @@ REST_FRAMEWORK = {
 # END RESTFARMEWORK CONFIGURATION
 
 # JWT CONFIGURATION
-ACCESS_TTL = int(get_env("ACCESS_TTL"))
-REFRESH_TTL = int(get_env("REFRESH_TTL"))
+ACCESS_TTL = int(get_env("ACCESS_TTL"))  # in seconds
+REFRESH_TTL = int(get_env("REFRESH_TTL"))  # in minutes
 JWT_SECRET = get_env("JWT_SECRET")
 if (
     len(JWT_SECRET.encode("utf-8")) < 64

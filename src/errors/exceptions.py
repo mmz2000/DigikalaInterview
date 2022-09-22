@@ -14,3 +14,7 @@ class NotFoundException(Exception):
     def __init__(self, message: dict, error_type: list):
         self.message = message
         self.error_type = error_type
+
+
+class InvalidRefresh(Exception):
+    pass

@@ -17,7 +17,7 @@ class RegisterAPIViewTestCase(LiveServerTestCase):
             json=data,
         )
 
-    def test_bad_request(self):
+    def test_bad_request_response(self):
         response = self.make_request({})
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         response_data = response.json()

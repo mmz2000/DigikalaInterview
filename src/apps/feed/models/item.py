@@ -11,6 +11,7 @@ class Item(models.Model):
     feed = models.ForeignKey(
         Feed, on_delete=models.CASCADE, verbose_name=_("Feed")
     )
+    published_at = models.DateTimeField(verbose_name=_("Published At"))
 
     class Meta:
         verbose_name = _("Item")

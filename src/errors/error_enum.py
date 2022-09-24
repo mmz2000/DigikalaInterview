@@ -17,3 +17,9 @@ class ErrorEnum:
 
     class GetItemListAPIView:
         INVALID_LIMIT_OR_OFFSET = "GET_ITEM_LIST_INVALID_LIMIT_OR_OFFSET"
+
+    class AddToFavoriteAPIView:
+        FEED_NOT_FOUND = "ADD_TO_FAVORITE_FEED_NOT_FOUND"
+
+    class RemoveFromFavoriteAPIView:
+        FEED_NOT_FOUND = "REMOVE_FROM_FAVORITE_FEED_NOT_FOUND"

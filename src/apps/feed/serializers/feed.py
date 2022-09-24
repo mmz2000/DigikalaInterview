@@ -8,7 +8,7 @@ class FeedListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Feed
-        fields = ("id", "name", "rss_url", "max_saved_items", "is_favorite")
+        fields = ("name", "rss_url", "max_saved_items", "is_favorite")
 
     def get_is_favorite(self, obj):
         if hasattr(obj, "is_favorite"):

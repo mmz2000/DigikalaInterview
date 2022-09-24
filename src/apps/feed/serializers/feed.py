@@ -17,3 +17,9 @@ class FeedListSerializer(serializers.ModelSerializer):
         if user_id is None:
             return False
         return obj.favorited_by.filter(id=user_id).exists()
+
+
+class FeedNestedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Feed
+        fields = ("id", "name")

@@ -9,7 +9,10 @@ class Item(models.Model):
     content = models.TextField(verbose_name=_("Content"))
     url = models.URLField(verbose_name=_("URL"))
     feed = models.ForeignKey(
-        Feed, on_delete=models.CASCADE, verbose_name=_("Feed")
+        Feed,
+        on_delete=models.CASCADE,
+        verbose_name=_("Feed"),
+        related_name="items",
     )
     published_at = models.DateTimeField(verbose_name=_("Published At"))
 

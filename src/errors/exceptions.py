@@ -18,3 +18,7 @@ class NotFoundException(Exception):
 
 class InvalidRefresh(Exception):
     pass
+
+
+class ModelNotFoundException(Exception):
+    pass

@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Feed(models.Model):
-    name = models.CharField(max_length=15, verbose_name=_("Name"))
+    name = models.CharField(max_length=31, verbose_name=_("Name"))
     favorited_by = models.ManyToManyField(
         get_user_model(),
         verbose_name=_("Favorited By"),

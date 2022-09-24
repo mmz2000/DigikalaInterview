@@ -13,7 +13,7 @@ class GetFeedSelectorTestCase(TestCase):
         self.favorited_feed.save()
 
     def test_get_feed_list(self):
-        feed_list = get_feed_list(self.user)
+        feed_list = get_feed_list(user_id=self.user.id)
         self.assertEqual(len(feed_list), 2)
         self.assertEqual(feed_list[0].is_favorite, True)
         self.assertEqual(feed_list[0].id, self.favorited_feed.id)

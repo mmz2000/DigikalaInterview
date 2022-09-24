@@ -1,0 +1,33 @@
+Feed:
+  type: "object"
+  properties:
+    id:
+      type: "integer"
+    name:
+      type: "string"
+    is_favorite:
+      type: "boolean"
+      description: "is favorited by user"
+
+Item:
+  type: "object"
+  properties:
+    title:
+      type: "string"
+    content:
+      type: "string"
+    url:
+      type: "string"
+    feed:
+      type: "object"
+      properties:
+        id:
+          type: "integer"
+        name:
+          type: "string"
+    published_at:
+      type: "string"
+      format: "date-time"
+    is_favorite:
+      type: "boolean"
+      description: "is favorited by user"

@@ -1,0 +1,23 @@
+swagger: "2.0"
+info:
+  title: "Interview Project API"
+  version: "0.0.0"
+host: "localhost:8000"
+basePath: "/api"
+schemes:
+  - "http"
+  - "https"
+paths:
+  /accounts/sign-up:
+    $ref: "./accounts/register.yaml"
+  /accounts/sign-in:
+    $ref: "./accounts/login.yaml"
+  /accounts/refresh:
+    $ref: "./accounts/refresh.yaml"
+  
+  /feed:
+    $ref: "./feed/get_item_list.yaml"
+  /feed/all:
+    $ref: "./feed/get_feed_list.yaml"
+  /feed/{id}/favorite:
+    $ref: "./feed/favorite.yaml"

@@ -1,0 +1,66 @@
+post:
+  tags:
+    - "Feed"
+  summary: "add to favorite"
+  description: "add to favorite"
+  operationId: "addToFavorite"
+  consumes:
+    - "application/json"
+  produces:
+    - "application/json"
+  parameters:
+    - in: "header"
+      name: "Authorization"
+      description: "access token"
+      required: true
+      type: "string"
+    - in: "path"
+      name: "id"
+      description: "feed id"
+      required: true
+      type: "integer"
+  responses:
+    200:
+      description: "successful operation"
+      schema:
+        type: "object"
+        properties:
+          ok:
+            type: "boolean"
+    401:
+      description: "unauthorized"
+    404:
+      description: "feed not found"
+delete:
+  tags:
+    - "Feed"
+  summary: "remove from favorite"
+  description: "remove from favorite"
+  operationId: "removeFromFavorite"
+  consumes:
+    - "application/json"
+  produces:
+    - "application/json"
+  parameters:
+    - in: "header"
+      name: "Authorization"
+      description: "access token"
+      required: true
+      type: "string"
+    - in: "path"
+      name: "id"
+      description: "feed id"
+      required: true
+      type: "integer"
+  responses:
+    200:
+      description: "successful operation"
+      schema:
+        type: "object"
+        properties:
+          ok:
+            type: "boolean"
+    401:
+      description: "unauthorized"
+    404:
+      description: "feed not found"

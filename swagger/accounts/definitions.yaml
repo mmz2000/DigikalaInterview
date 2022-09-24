@@ -1,0 +1,58 @@
+SignIn:
+  type: "object"
+  required:
+    - "authenticator"
+    - "password"
+  properties:
+    authenticator:
+      type: "string"
+      description: "email or username"
+    password:
+      type: "string"
+      format: "password"
+
+
+RefreshToken:
+  type: "object"
+  required:
+    - "refresh_token"
+  properties:
+    refresh_token:
+      type: "string"
+      description: "JWT token"
+
+Token:
+  type: "object"
+  properties:
+    ok:
+      type: "boolean"
+    data:
+      type: "object"
+      properties:
+        access_token:
+          type: "string"
+          description: "JWT token"
+        refresh_token:
+          type: "string"
+          description: "JWT token"
+
+SignUp:
+  type: "object"
+  required:
+    - "username"
+    - "email"
+    - "password"
+  properties:
+    username:
+      type: "string"
+    email:
+      type: "string"
+      format: "email"
+    password:
+      type: "string"
+      format: "password"
+    first_name:
+      type: "string"
+    last_name:
+      type: "string"
+

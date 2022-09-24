@@ -1,0 +1,30 @@
+get:
+  tags:
+    - "Feed"
+  summary: "get feed list"
+  description: "get feed list"
+  operationId: "getFeedList"
+  consumes:
+    - "application/json"
+  produces:
+    - "application/json"
+  parameters:
+    - in: "header"
+      name: "Authorization"
+      description: "access token"
+      required: true
+      type: "string"
+  responses:
+    200:
+      description: "successful operation"
+      schema:
+        type: "object"
+        properties:
+          ok:
+            type: "boolean"
+          data:
+            type: "array"
+            items:
+              $ref: "./definitions.yaml#/Feed"
+    401:
+      description: "unauthorized"

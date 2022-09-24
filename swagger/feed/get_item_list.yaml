@@ -1,0 +1,40 @@
+get:
+  tags:
+    - "Feed"
+  summary: "get item list"
+  description: "get item list"
+  operationId: "getItemList"
+  consumes:
+    - "application/json"
+  produces:
+    - "application/json"
+  parameters:
+    - in: "header"
+      name: "Authorization"
+      description: "access token"
+      required: true
+      type: "string"
+    - in: "query"
+      name: "limit"
+      description: "limit"
+      required: false
+      type: "integer"
+    - in: "query"
+      name: "offset"
+      description: "offset"
+      required: false
+      type: "integer"
+  responses:
+    200:
+      description: "successful operation"
+      schema:
+        type: "object"
+        properties:
+          ok:
+            type: "boolean"
+          data:
+            type: "array"
+            items:
+              $ref: "./definitions.yaml#/Item"
+    401:
+      description: "unauthorized"

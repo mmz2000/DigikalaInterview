@@ -1,0 +1,24 @@
+post:
+  tags:
+    - "Accounts"
+  summary: "sign up"
+  description: "sign up"
+  operationId: "signUp"
+  consumes:
+    - "application/json"
+  produces:
+    - "application/json"
+  parameters:
+    - in: "body"
+      name: "body"
+      description: "sign up"
+      required: true
+      schema:
+        $ref: "./definitions.yaml#/SignUp"
+  responses:
+    200:
+      description: "successful operation"
+      schema:
+        $ref: "./definitions.yaml#/Token"
+    400:
+      description: "invalid credentials"

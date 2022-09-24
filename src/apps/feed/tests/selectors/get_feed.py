@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from src.apps.feed.selectors import get_feed_list
+from src.apps.feed.selectors import get_feed_by_id, get_feed_list
 from src.apps.feed.tests.factories import FeedFactory, UserFactory
 
 
@@ -19,3 +19,7 @@ class GetFeedSelectorTestCase(TestCase):
         self.assertEqual(feed_list[0].id, self.favorited_feed.id)
         self.assertEqual(feed_list[1].is_favorite, False)
         self.assertEqual(feed_list[1].id, self.not_favorited_feed.id)
+
+    def test_get_feed_by_id_selector(self):
+        feed = get_feed_by_id(feed_id=self.favorited_feed.id)
+        self.assertEqual(feed, self.favorited_feed)

@@ -11,3 +11,7 @@ def get_feed_list(user_id):
             output_field=BooleanField(),
         )
     ).order_by("-is_favorite", "id")
+
+
+def get_feed_by_id(feed_id):
+    return Feed.objects.get(id=feed_id)

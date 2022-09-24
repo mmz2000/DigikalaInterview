@@ -3,7 +3,7 @@ from django.db.models import BooleanField, Case, When
 from src.apps.feed.models import Feed
 
 
-def get_feed_list(user_id):
+def get_feed_list(user_id=None):
     return Feed.objects.annotate(
         is_favorite=Case(
             When(favorited_by__id=user_id, then=True),

@@ -50,6 +50,8 @@ factory-boy==3.2.1
     # via -r test.in
 faker==14.2.0
     # via factory-boy
+feedparser==6.0.10
+    # via -r common.in
 flake8==5.0.4
     # via -r dev.in
 freezegun==1.2.2
@@ -104,6 +106,8 @@ redis==4.3.4
     # via -r common.in
 requests==2.28.1
     # via -r test.in
+sgmllib3k==1.0.0
+    # via feedparser
 six==1.16.0
     # via python-dateutil
 sqlparse==0.4.2

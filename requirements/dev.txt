@@ -36,6 +36,8 @@ django-extensions==3.2.1
     # via -r dev.in
 djangorestframework==3.14.0
     # via -r common.in
+feedparser==6.0.10
+    # via -r common.in
 flake8==5.0.4
     # via -r dev.in
 isort==5.10.1
@@ -76,6 +78,8 @@ pytz==2022.2.1
     # via djangorestframework
 redis==4.3.4
     # via -r common.in
+sgmllib3k==1.0.0
+    # via feedparser
 sqlparse==0.4.2
     # via
     #   django

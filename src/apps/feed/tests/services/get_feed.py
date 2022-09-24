@@ -17,7 +17,9 @@ class GetFeedServiceTestCase(TestCase):
         self.assertEqual(len(feed_list), 2)
         self.assertEqual(feed_list[0].get("is_favorite"), True)
         self.assertEqual(feed_list[0].get("name"), self.favorited_feed.name)
+        self.assertEqual(feed_list[0].get("id"), self.favorited_feed.id)
         self.assertEqual(feed_list[1].get("is_favorite"), False)
         self.assertEqual(
             feed_list[1].get("name"), self.not_favorited_feed.name
         )
+        self.assertEqual(feed_list[1].get("id"), self.not_favorited_feed.id)

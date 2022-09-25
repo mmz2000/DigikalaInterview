@@ -9,10 +9,10 @@ RUN apk update \
     jpeg-dev zlib-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev libxslt-dev
 RUN mkdir $APP_HOME
 # copy entrypoint-prod.sh
-COPY ./build/entrypoint.sh $APP_HOME
+COPY ./docker/entrypoint.sh $APP_HOME
 COPY ./cronjob/crontab.txt $APP_HOME
 COPY ./cronjob/script.sh $APP_HOME
-RUN chmod 755 $APP_HOME/script.sh $APP_HOME/entry.sh
+RUN chmod 755 $APP_HOME/script.sh $APP_HOME/entrypoint.sh
 RUN /usr/bin/crontab $APP_HOME/crontab.txt
 # copy project
 COPY ./requirements/production.txt .
